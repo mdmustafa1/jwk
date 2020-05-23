@@ -1,0 +1,25 @@
+kind: ReplicationController
+apiVersion: v1
+
+metadata:
+  name: mywebprgm
+  labels: 
+    env: testng
+    region: IN
+   
+
+spec:
+  replicas: 3
+  selector:
+    env: production
+  template:   
+    metadata:
+      name: mywebprgm
+      labels: 
+        env: production
+    
+    spec:
+      containers:
+      - name: my-cont
+        image: httpd
+

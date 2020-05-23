@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod2
+  labels: 
+    reg: US
+    name: fortest
+    env: testing
+spec:
+  containers:
+  - name: my-cont2
+    image: httpd

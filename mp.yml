@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels: 
+    reg: IN
+    name: myweb
+    env: production
+spec:
+  containers:
+  - name: my-cont
+    image: httpd

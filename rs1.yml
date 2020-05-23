@@ -1,0 +1,26 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: myweb
+   
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: testing
+#  matchExpressions:
+#    -  { key: env,  operator: In,  values: [ testing ] }  
+    
+  template:   
+    metadata:
+      name: myweb
+      labels: 
+        env: testing
+        reg: IN
+        sa: "2"
+
+    spec:
+      containers:
+      - name: my-cont
+        image: httpd
+
